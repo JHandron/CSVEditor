@@ -1,8 +1,9 @@
+package seltzer;
+
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class CSVDelegate {
@@ -38,12 +39,12 @@ public class CSVDelegate {
         System.out.println("Here are the file contents:");
         seltzerList.forEach(System.out::println);
 
-        System.out.println("Please select which Seltzer you would like to edit.");
+        System.out.println("Please select which seltzer.Seltzer you would like to edit.");
         Scanner scanner = new Scanner(System.in);
         String inputName = scanner.nextLine();
         System.out.println(inputName);
 
-//        Optional<Seltzer> seltzer = seltzerList.stream().filter(s -> s.getName().equalsIgnoreCase(inputName)).findFirst();
+//        Optional<seltzer.Seltzer> seltzer = seltzerList.stream().filter(s -> s.getName().equalsIgnoreCase(inputName)).findFirst();
 //        int index = seltzer
 //        System.out.println(index);
 
@@ -66,7 +67,7 @@ public class CSVDelegate {
 
     public static void doWriteUpdate(List<Seltzer> p_seltzerList){
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(TEST_FILE))){
-//            bufferedWriter.write(TestData.HEADER_ROW);
+//            bufferedWriter.write(seltzer.TestData.HEADER_ROW);
 //            bufferedWriter.newLine();
             for (final Seltzer s : p_seltzerList) {
                 bufferedWriter.write(s.toCSVFormattedString());
@@ -79,7 +80,7 @@ public class CSVDelegate {
 
     public static void doTestWriting(){
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(TEST_FILE))){
-//            bufferedWriter.write(TestData.HEADER_ROW);
+//            bufferedWriter.write(seltzer.TestData.HEADER_ROW);
 //            bufferedWriter.newLine();
             for (final Seltzer s : TestData.lstSeltzer) {
                 bufferedWriter.write(s.toCSVFormattedString());

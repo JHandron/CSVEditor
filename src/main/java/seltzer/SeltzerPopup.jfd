@@ -1,0 +1,48 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "17.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.GridLayout ) {
+			"columns": 1
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "list1"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+				"columns": 1
+				"rows": 4
+			} ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "NameInput"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "RatingInput"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "CommentInput"
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "SeriesInputComboBox"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "CancelButton"
+				"text": "Cancel"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "ApplyButton"
+				"text": "Apply"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Apply", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
